@@ -1,9 +1,9 @@
 import './App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Profile from './pages/Profile';
 import SignIn from './pages/SignIn';
-import {useSelector} from 'react-redux'
-import {Navigate} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
 function App() {
 
@@ -13,14 +13,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={
-          isLoggedIn 
-          ? <Profile/> 
-          : <Navigate to='/signin'/>
+          isLoggedIn
+            ? <Profile />
+            : <Navigate to='/signin' />
         } />
         <Route path="signin" element={
-          !isLoggedIn 
-          ? <SignIn/> 
-          : <Navigate to='/'/>
+          !isLoggedIn
+            ? <SignIn />
+            : <Navigate to='/' />
         } />
       </Routes>
     </BrowserRouter>
@@ -28,4 +28,3 @@ function App() {
 }
 
 export default App;
- 
